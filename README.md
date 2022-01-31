@@ -1,212 +1,47 @@
-Contribution: 2021-07-17 16:00
+# SoBull DEX UI
 
-Contribution: 2021-07-17 19:01
+An implementation of a UI for the SoBull DEX.
 
-Contribution: 2021-07-17 18:02
+### Running the UI
 
-Contribution: 2021-07-17 16:03
+Run `yarn` to install dependencies, then run `yarn start` to start a development server or `yarn build` to create a production build that can be served by a static file server.
 
-Contribution: 2021-07-17 15:04
+### Collect referral fees
 
-Contribution: 2021-07-17 16:05
+If you are hosting a public UI using this codebase, you can collect referral fees when your users trade through your site.
 
-Contribution: 2021-07-17 17:06
+To do so, set the `REACT_APP_USDT_REFERRAL_FEES_ADDRESS` and `REACT_APP_USDC_REFERRAL_FEES_ADDRESS` environment variables to the addresses of your USDT and USDC SPL token accounts.
 
-Contribution: 2021-07-17 17:07
+You may want to put these in local environment files (e.g. `.env.development.local`, `.env.production.local`). See the [documentation](https://create-react-app.dev/docs/adding-custom-environment-variables) on environment variables for more information.
 
-Contribution: 2021-07-21 16:00
+NOTE: remember to re-build your app before deploying for your referral addresses to be reflected.
 
-Contribution: 2021-07-21 16:01
+### Add Trading View charts
 
-Contribution: 2021-07-21 17:02
+It is possible to add OHLCV candles built from on chain data using [Bonfida's API](https://docs.bonfida.com). Here is how to do it:
 
-Contribution: 2021-07-21 18:03
+1. Get access to the [TradingView Charting Library](https://github.com/tradingview/charting_library/) repository. This is a **private repository** and it will **return a 404 if you don't have access to it**. To get access to the repository please refer to [TradingView's website](https://www.tradingview.com/HTML5-stock-forex-bitcoin-charting-library/)
 
-Contribution: 2021-07-21 16:04
+2. Once you have access to the Charting Library repository:
 
-Contribution: 2021-07-21 17:05
+- Copy `charting_library` folder from https://github.com/tradingview/charting_library/ to `/public` and to `/src` folders.
+- Copy `datafeeds` folder from https://github.com/tradingview/charting_library/ to `/public`.
 
-Contribution: 2021-07-21 19:06
+3. Import `TVChartContainer` from `/src/components/TradingView` and add it to your `TradePage.tsx`. The TradingView widget will work out of the box using [Bonfida's](https://bonfida.com) datafeed.
 
-Contribution: 2021-07-23 16:00
+4. Remove the following from the `tsconfig.json`
 
-Contribution: 2021-07-23 15:01
+```json
+"./src/components/TradingView/index.tsx"
+```
 
-Contribution: 2021-07-23 17:02
+5. Uncomment the following in `public/index.html`
 
-Contribution: 2021-07-23 16:03
+```
+<script src="%PUBLIC_URL%/datafeeds/udf/dist/polyfills.js"></script>
+<script src="%PUBLIC_URL%/datafeeds/udf/dist/bundle.js">
+```
 
-Contribution: 2021-07-24 16:00
-
-Contribution: 2021-07-24 16:01
-
-Contribution: 2021-07-24 15:02
-
-Contribution: 2021-07-24 19:03
-
-Contribution: 2021-07-24 15:04
-
-Contribution: 2021-07-24 16:05
-
-Contribution: 2021-07-27 15:00
-
-Contribution: 2021-07-27 18:01
-
-Contribution: 2021-07-28 17:00
-
-Contribution: 2021-07-30 18:00
-
-Contribution: 2021-07-30 17:01
-
-Contribution: 2021-08-01 18:00
-
-Contribution: 2021-08-01 17:01
-
-Contribution: 2021-08-01 15:02
-
-Contribution: 2021-08-01 16:03
-
-Contribution: 2021-08-01 17:04
-
-Contribution: 2021-08-01 18:05
-
-Contribution: 2021-08-01 18:06
-
-Contribution: 2021-08-01 18:07
-
-Contribution: 2021-08-01 19:08
-
-Contribution: 2021-08-01 17:09
-
-Contribution: 2021-08-02 16:00
-
-Contribution: 2021-08-02 18:01
-
-Contribution: 2021-08-03 18:00
-
-Contribution: 2021-08-03 16:01
-
-Contribution: 2021-08-03 18:02
-
-Contribution: 2021-08-03 17:03
-
-Contribution: 2021-08-03 18:04
-
-Contribution: 2021-08-03 16:05
-
-Contribution: 2021-08-03 17:06
-
-Contribution: 2021-08-03 17:07
-
-Contribution: 2021-08-03 19:08
-
-Contribution: 2021-08-03 15:09
-
-Contribution: 2021-08-04 17:00
-
-Contribution: 2021-08-04 17:01
-
-Contribution: 2021-08-04 16:02
-
-Contribution: 2021-08-04 17:03
-
-Contribution: 2021-08-04 16:04
-
-Contribution: 2021-08-04 17:05
-
-Contribution: 2021-08-06 18:00
-
-Contribution: 2021-08-06 18:01
-
-Contribution: 2021-08-07 17:00
-
-Contribution: 2021-08-07 19:01
-
-Contribution: 2021-08-07 18:02
-
-Contribution: 2021-08-07 17:03
-
-Contribution: 2021-08-07 16:04
-
-Contribution: 2021-08-07 16:05
-
-Contribution: 2021-08-07 15:06
-
-Contribution: 2021-08-08 15:00
-
-Contribution: 2021-08-08 15:01
-
-Contribution: 2021-08-08 16:02
-
-Contribution: 2021-08-09 17:00
-
-Contribution: 2021-08-09 15:01
-
-Contribution: 2021-08-09 17:02
-
-Contribution: 2021-08-09 15:03
-
-Contribution: 2021-08-09 19:04
-
-Contribution: 2021-08-09 17:05
-
-Contribution: 2021-08-12 15:00
-
-Contribution: 2021-08-12 15:01
-
-Contribution: 2021-08-12 16:02
-
-Contribution: 2021-08-12 18:03
-
-Contribution: 2021-08-12 15:04
-
-Contribution: 2021-08-12 19:05
-
-Contribution: 2021-08-12 16:06
-
-Contribution: 2021-08-13 18:00
-
-Contribution: 2021-08-13 18:01
-
-Contribution: 2021-08-13 17:02
-
-Contribution: 2021-08-13 19:03
-
-Contribution: 2021-08-13 19:04
-
-Contribution: 2021-08-13 15:05
-
-Contribution: 2021-08-13 17:06
-
-Contribution: 2021-08-13 15:07
-
-Contribution: 2021-08-13 15:08
-
-Contribution: 2021-08-14 17:00
-
-Contribution: 2021-08-14 16:01
-
-Contribution: 2021-08-18 17:00
-
-Contribution: 2021-08-18 18:01
-
-Contribution: 2021-08-18 16:02
-
-Contribution: 2021-08-18 18:03
-
-Contribution: 2021-08-20 19:00
-
-Contribution: 2021-08-20 19:01
-
-Contribution: 2021-08-20 17:02
-
-Contribution: 2021-08-20 17:03
-
-Contribution: 2021-08-22 15:00
-
-Contribution: 2021-08-22 18:01
-
-Contribution: 2021-08-22 15:02
-
-Contribution: 2021-08-22 15:03
-
+<p align="center">
+<img height="300" src="https://i.imgur.com/UyFKmTv.png">
+</p>

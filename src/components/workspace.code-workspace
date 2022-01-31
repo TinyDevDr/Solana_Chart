@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../dex"
+		},
+		{
+			"path": "../../../serum-dex"
+		}
+	],
+	"settings": {}
+}
